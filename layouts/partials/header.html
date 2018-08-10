@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="/css/blog.css" />
+</head>
+<body>
+
+    <!-- nav -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">Home</a>
+        </div>
+    </nav>
+    <!-- /nav -->
+
+    <!-- hero -->
+    <section class="hero is-info is-medium">
+        <div class="hero-body" style="background-image: url(/img/bg-blog.jpg);">
+            <div class="container has-text-centered">
+                <br>
+                <h1 class="title is-size-1">
+                    {{ if eq .Type "tags" }}
+                        #{{ .Title }}
+                    {{ else if eq .Type "archives" }}
+                        Archive {{ .Title }}
+                    {{ else }}
+                        {{ .Title }}
+                    {{ end }}
+                </h1>
+                {{ if eq .Type "article" }}
+                    {{ .Date.Format "January 2, 2006" }} &middot;&nbsp;{{ .ReadingTime }} min read
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <br>
