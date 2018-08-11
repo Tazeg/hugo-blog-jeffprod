@@ -30,7 +30,7 @@ theme = "jeffprod"
 ```
 hugo new post/my-first-post.md
 ```
-And edit this new file `content/post/my-first-post.md`.
+And edit this new file `content/post/my-first-post.md`. You can use [HUGO shortcodes](https://gohugo.io/content-management/shortcodes/) and [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ### Render
 
