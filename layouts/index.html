@@ -1,5 +1,5 @@
 {{ define "main" }}
-
+{{ $paginator := .Paginate (where .Site.Pages "Type" "article").ByPublishDate.Reverse }}
 <div class="container">
     <div class="columns">
         <div class="column is-9">
@@ -7,7 +7,7 @@
                 <div class="content">
                     <h3>Welcome to my blog !</h3>
                     <hr>
-                    {{ range first 5 (where .Site.Pages "Type" "article").ByPublishDate.Reverse }}
+                    {{ range $paginator.Pages }}
                         <article class="media">
                             <div class="media-content">
                                 <div class="content">
@@ -27,6 +27,21 @@
         <div class="column is-3">
             {{ partial "widget-tags.html" . }}<br>
             {{ partial "widget-archives.html" . }}
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column is-9">
+            <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
+                {{ if $paginator.HasPrev }}<a class="pagination-previous" href="{{ $paginator.Prev.URL }}">Previous</a>{{ end }}
+                {{ if $paginator.HasNext }}<a class="pagination-next" href="{{ $paginator.Next.URL }}">Next</a>{{ end }}
+                <ul class="pagination-list">
+                    {{ range $paginator.Pagers }}
+                    <li class="pagination__item">
+                      <a class="pagination-link{{ if eq . $paginator }} is-current{{ end }}" aria-label="Goto page {{ .PageNumber }}" href="{{ .URL }}">{{ .PageNumber }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </nav>
         </div>
     </div>
 </div>

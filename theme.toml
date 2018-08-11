@@ -6,7 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/Tazeg/hugo-blog-jeffprod/blob/master/LICENSE"
 description = "A new theme blog for HUGO built with Bulma CSS. Including archives and tags widgets."
 homepage = "https://github.com/Tazeg/hugo-blog-jeffprod"
-tags = ["blog","archives","theme","tags","bulma","simple","personal"]
+tags = ["simple","blog","theme","pagination","archives","tags","bulma","personal"]
 features = []
 min_version = "0.41"
 
