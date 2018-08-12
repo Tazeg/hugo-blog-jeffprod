@@ -1,6 +1,6 @@
 # HUGO blog theme by @JeffProd
 
-A free blog theme for [HUGO](https://gohugo.io/), with tags, archives, last posts...
+A free blog theme for [HUGO](https://gohugo.io/), with tags, archives, last posts... Using [Bulma CSS framework](https://bulma.io/).
 
 ![HUGO blog theme by JeffProd.com](images/screenshot.png)
 
