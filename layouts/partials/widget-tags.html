@@ -4,7 +4,7 @@
         <div class="tags">
         {{ $baseurl := .Site.BaseURL }}
         {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-            <span class="tag"><a href="{{ $baseurl }}tags/{{ $name | urlize }}">{{ $name }}</a></span>
+            <span class="tag"><a href="{{ $baseurl }}/tags/{{ $name | urlize }}">{{ $name }}</a></span>
         {{ end }}
         </div>          
     </div>
