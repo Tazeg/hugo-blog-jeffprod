@@ -1,6 +1,5 @@
 {{ define "main" }}
-{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-{{ $paginator := .Paginate $pages }}
+{{ $paginator := .Paginate (where .Site.Pages "Type" "article").ByPublishDate.Reverse }}
 <div class="container">
     <div class="columns">
         <div class="column is-9">

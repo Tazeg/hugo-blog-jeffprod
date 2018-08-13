@@ -2,9 +2,8 @@
     <div class="card-content">
         <h1 class="title is-5">Tags</h1>
         <div class="tags">
-        {{ $baseurl := .Site.BaseURL }}
         {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-            <span class="tag"><a href="{{ $baseurl }}/tags/{{ $name | urlize }}">{{ $name }}</a></span>
+            <span class="tag"><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></span>
         {{ end }}
         </div>          
     </div>
