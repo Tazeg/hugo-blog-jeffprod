@@ -1,9 +1,8 @@
 <div class="card">
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
-        {{ range (where .Site.Pages "Type" "article").GroupByDate "2006" }}
-            <a href="/archives/{{ .Key }}">{{ .Key }}</a> ({{ len .Pages }})<br>
+        {{ range (where .Site.RegularPages "Section" "post").GroupByDate "2006" }}
+            <a href="{{ "archives" | absURL }}/{{ .Key }}">{{ .Key }}</a> ({{ len .Pages }})<br>
         {{ end }}
     </div>
 </div>
-    
