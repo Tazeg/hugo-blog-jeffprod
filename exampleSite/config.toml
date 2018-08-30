@@ -5,7 +5,7 @@ copyright = "Copyright © 2008–2018, @JeffProd"
 canonifyurls = true
 paginate = 3
 
-theme = "jeffprod"
+theme = "hugo-blog-jeffprod"
 
 [taxonomies]
     tag = "tags"
