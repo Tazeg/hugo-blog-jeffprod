@@ -49,7 +49,7 @@ All files to publish are in `public/` directory.
 
 # Donate
 
-<https://en.jeffprod.com/donate.html>
+<https://en.jeffprod.com/donate/>
 
 # Credits
 
