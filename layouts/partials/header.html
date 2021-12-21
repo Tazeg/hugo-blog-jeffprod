@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ partial "google/analytics" . }}
+    {{ partial "google/adsense" . }}
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,6 +22,10 @@
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="{{ .Site.BaseURL | absURL }}">Home</a>
+            {{ range .Site.Menus.main }}
+            <a class="navbar-item" href="{{ .URL }}"> {{ .Pre }}{{ .Name }}</a>
+            
+            {{ end }}
         </div>
     </nav>
     <!-- /nav -->
